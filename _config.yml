@@ -1,8 +1,29 @@
-name: Site name
-description: Site description
-markdown: redcarpet
-highlighter: pygments # or rouge or null
-exclude: ["node_modules", "gulpfile.js", "package.json"]
+url: http://example.com
+name: Website name
+description: Website description
+title: Website title
+email: your-email@example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+
+# Custom config
 source: ./src
 destination: ./dist
-keep_files: [assets]
+keep_files: [assets] # Jekyll wont be in charge of assets folder
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+highlighter: rouge
+
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - gulpfile.js
+  - package.json
